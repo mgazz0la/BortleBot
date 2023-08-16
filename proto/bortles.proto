@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "github.com/mgazz0la/BortleBot/protos/go/bortlespb";
+
+import "google/protobuf/timestamp.proto";
+
+package bortlespb;
+
+service BortlesService {
+  rpc HelloWorld (HelloRequest) returns (HelloResponse) {}
+}
+
+message HelloRequest {
+    string msg = 1;
+}
+
+message HelloResponse {
+  google.protobuf.Timestamp ts = 1;
+}
+
